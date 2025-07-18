@@ -275,6 +275,7 @@ body {
     width: 100%;
     background-size: cover;
     margin-top: -88px;
+    overflow: hidden;
 }
 
 /* Hero Section */
@@ -285,15 +286,38 @@ body {
     width: 100%;
     max-width: 1240px;
     margin: auto;
+    overflow: visible !important;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: visible;
+}
+
+/* Decorative pseudo-element */
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: -120px; /* go above */
+  left: -60px; /* go left outside */
+  width: 120%;
+  height: 130%;
+  background-image:
+    url('./assets/star.svg'),
+    url('./assets/circle.svg'),
+    url('./assets/curve-line.svg');
+  background-repeat: no-repeat;
+  background-position:
+    0 24px,
+    54.5% 9px,
+    35% 76%;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero-text {
@@ -382,6 +406,15 @@ body {
     width: 414px;
 }
 
+@media (max-width: 1280px) {
+    .hero-content::before {
+    background-position:
+        25px 24px,
+        54.5% 9px,
+        35% 76%;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-container {
         padding-top: 270px;
@@ -425,6 +458,13 @@ body {
         align-items: flex-start;
         gap: 32px;
     }
+
+    .hero-content::before {
+        background-position:
+            25px 44px,
+            75% 35%,
+            45% 30%;
+    }
     
     .hero-images{
         margin-top: 0px;
@@ -433,6 +473,17 @@ body {
 }
 
 @media (max-width: 768px) {   
+    .hero-content::before {
+        background-size: 
+            60px auto,
+            80px auto,
+            100px auto;
+        background-position:
+            25px 44px,
+            75% 30%,
+            45% 27%;
+    }
+
     .hero-text {
         gap: 24px;
     }
@@ -471,6 +522,12 @@ body {
 }
 
 @media (max-width: 475px) {   
+    .hero-content::before {
+        background-position:
+            25px 44px,
+            90% 53%,
+            16% 67%;
+    }
     .hero-text {
         gap: 24px;
     }
