@@ -526,6 +526,11 @@ body {
         margin-top: -125px;
         height: auto
     }
+
+    .hero-bg-wrapper {
+        height: 900px;
+        background-position: right;
+    }
 }
 
 @media (max-width: 475px) {
@@ -564,6 +569,9 @@ body {
         width: 210px;
         margin-top: -90px;
         height: auto
+    }
+    .hero-bg-wrapper {
+        height: 800px;
     }
 }
 
