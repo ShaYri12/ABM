@@ -728,6 +728,226 @@ body {
     margin: 20px 0px;
 }
 
+/* How Our Program Works */
+.program-works-bg-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1; /* should be lower than wave layer */ 
+}
+
+
+.program-works-bg-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  left: 0;
+  width: 100%;
+  height: 323px; /* adjust as needed */
+  background: url('./assets/wave-top.png') no-repeat top center;
+  background-size: cover;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.program-works-bg-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -90px;
+  left: 0;
+  width: 100%;
+  height: 323px; /* adjust as needed */
+  background: url('./assets/wave-bottom.png') no-repeat bottom center;
+  background-size: cover;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.program-works {
+  position: relative;
+  background: url('./assets/program-works-img.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center 30%;
+  padding: 200px 0;
+  color: white;
+  z-index: 3;
+  overflow: hidden;
+}
+
+/* Gradient overlay */
+.program-works::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #D9305B 14.3%, #7E2784 79.66%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9; /* adjust for transparency */
+}
+
+.program-works-container {
+    max-width: 1238px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    position: relative;
+    z-index: 4;
+}
+
+.program-works-container .section-title {
+    color: #fff;
+    font-size: 46px;
+    line-height: 57px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Clash Display', sans-serif;
+    padding-bottom: 30px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.step-number {
+  position: relative;
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  border: 4.38px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 100%;
+  color: white;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.step-number::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #387858 0%, #D0D370 100%);
+  z-index: -1;
+}
+
+.step-number::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 4.38px solid rgba(255, 255, 255, 0.6); /* semi-transparent border */
+  z-index: 1;
+}
+
+.step-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0%;
+}
+
+.step-description {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px){
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .program-works-bg-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    height: 180px; /* adjust as needed */
+    background: url('./assets/wave-top.png') no-repeat top center;
+    background-size: cover;
+    z-index: 5;
+    pointer-events: none;
+    }
+
+    .program-works-bg-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: -90px;
+    left: 0;
+    width: 100%;
+    height: 180px; /* adjust as needed */
+    background: url('./assets/wave-bottom.png') no-repeat bottom center;
+    background-size: cover;
+    z-index: 5;
+    pointer-events: none;
+    }
+
+    .program-works {
+        padding: 70px 0;
+    }
+    
+    .program-works-container .section-title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .step-number {
+        width: 70px;
+        height: 70px;
+        font-size: 34px;
+    }
+    
+    .step-title {
+        font-size: 22px;
+    }
+    
+    .step-description {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 480px) {    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+    
+    .step-title {
+        font-size: 20px;
+    }
+
+    .step-description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
 /* Apply Now */
 .apply-now {
     width: 100%;
