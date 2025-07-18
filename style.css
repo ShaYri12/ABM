@@ -747,8 +747,8 @@ body {
   top: -90px;
   left: 0;
   width: 100%;
-  height: 323px; /* adjust as needed */
-  background: url('./assets/wave-top.png') no-repeat top center;
+  height: 323px;
+  background: url('./assets/wave-top.png') repeat-x top center;
   background-size: cover;
   z-index: 5;
   pointer-events: none;
@@ -760,8 +760,8 @@ body {
   bottom: -90px;
   left: 0;
   width: 100%;
-  height: 323px; /* adjust as needed */
-  background: url('./assets/wave-bottom.png') no-repeat bottom center;
+  height: 323px;
+  background: url('./assets/wave-bottom-large.png') no-repeat bottom center;
   background-size: cover;
   z-index: 5;
   pointer-events: none;
