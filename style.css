@@ -1424,14 +1424,11 @@ body {
     position: relative;
     animation: modalSlideIn 0.3s ease-out;
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* Internet Explorer 10+ */
 }
 
 .modal::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari, Opera */
 }
 
 @keyframes modalSlideIn {
@@ -1482,7 +1479,6 @@ body {
 }
 
 .modal-content {
-    /* max-width: 1140px; */
     width: 100%;
     margin: auto;
     padding: 0px 20px 40px 20px;
@@ -1602,9 +1598,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    /* For Firefox */
     color: transparent;
-    /* Fallback for other browsers */
 }
 
 .item-benefits {
@@ -1618,10 +1612,6 @@ body {
 /* ========================================
    TERMS OF USE MODAL
    ======================================== */
-.terms-modal {
-    /* max-width: 1240px; */
-}
-
 .terms-header {
     padding: 81px 20px 71px 20px;
 }
@@ -2143,7 +2133,6 @@ body {
 .form-group {
     display: flex;
     flex-direction: column;
-    /* gap: 8px; */
 }
 
 .form-group label {
@@ -2158,7 +2147,6 @@ body {
     font-weight: 700;
 }
 
-/* Minimalist underline style for inputs and selects */
 .form-group input,
 .form-group select {
     border: none;
@@ -2185,21 +2173,17 @@ body {
     font-size: 16px;
 }
 
-/* Increase vertical spacing between fields */
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Label styling */
 .form-group label {
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
     color: #2D2D2D;
-    /* letter-spacing: 0.01em; */
 }
 
-/* Hide default arrow and add custom SVG arrow */
 .form-group select {
     appearance: none;
     -webkit-appearance: none;
@@ -2292,7 +2276,3 @@ body {
         height: 35px;
     }
 }
-
-/* ========================================
-   RESPONSIVE MODAL STYLES
-   ======================================== */
