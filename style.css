@@ -2103,6 +2103,7 @@ body {
 .personal-info-image {
     max-width: 454px;
     width: 100%;
+    height: -webkit-fill-available;
 }
 
 .personal-info-image img {
@@ -2114,6 +2115,7 @@ body {
 
 .personal-info-form {
     max-width: 595px;
+    height: -webkit-fill-available;
     width: 100%;
     background: white;
 }
@@ -2144,14 +2146,14 @@ body {
 }
 
 .form-group label {
-    font-family: 'Clash Display', sans-serif;
     font-size: 14px;
-    font-weight: 600;
+    line-height: 20px;
+    font-weight: 500;
     color: #2D2D2D;
 }
 
 .required {
-    color: #D9305B;
+    color: #FF0000;
     font-weight: 700;
 }
 
@@ -2171,13 +2173,13 @@ body {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-bottom: 2px solid #D9305B;
+    border-bottom: 2px solid #FF0000;
     outline: none;
     background: transparent;
 }
 
 .form-group input::placeholder {
-    color: #bdbdbd;
+    color: #8D8D8D;
     opacity: 1;
     font-size: 16px;
 }
@@ -2201,7 +2203,7 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: transparent url('assets/arrow-checkbox.svg') no-repeat right 8px center/18px 18px;
+    background: transparent url('assets/dropdown-arrow.svg') no-repeat right 0px center/14px;
     padding-right: 32px;
     cursor: pointer;
     color: #2D2D2D;
@@ -2217,42 +2219,54 @@ body {
         grid-template-columns: 1fr;
         gap: 0;
     }
+
     .personal-info-form {
         padding: 0 8px;
     }
 }
 
 .submit-btn {
-    background: linear-gradient(90deg, #D9305B 0%, #387858 100%);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 16px 32px;
-    font-family: 'Clash Display', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
+    width: fit-content;
     cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: transform 0.2s ease;
-    margin-top: 10px;
+    background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 999px;
+    padding: 12px 10px 12px 30px;
+    text-decoration: none;
+    margin-top: 11px;
+    box-shadow: 0 2px 8px rgba(56, 120, 88, 0.08);
+    transition: background 0.5s, color 0.5s;
+    position: relative;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
+    background: linear-gradient(180deg, #387858 0%, #D0D370 100%);
+    color: white;
 }
 
 .submit-btn-icon {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(180deg, #387858 0%, #D0D370 100%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    color: #fff;
+    transition: background 0.5s;
 }
 
-.submit-btn-icon svg {
-    width: 18px;
-    height: 18px;
+.submit-btn:hover .submit-btn-icon {
+    background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+    color: white;
 }
 
 /* ========================================
