@@ -48,7 +48,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: #000 !important;
+    background: #2d2d2d !important;
     transition: background 0.3s;
 }
 
@@ -1466,11 +1466,10 @@ body {
     position: absolute;
     top: 40px;
     right: 50px;
-    width: 60px;
-    height: 60px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    background: transparent;
     transition: transform 0.2s ease;
 }
 
@@ -1609,6 +1608,129 @@ body {
     text-align: left;
 }
 
+@media (max-width: 1024px) {
+    .modal-close {
+        top: 15px;
+        background: transparent;
+        border: none;
+        right: 15px;
+    }
+
+    .rewards-header h2 {
+        font-size: 30px;
+    }
+
+    .rewards-header {
+        padding: 70px 20px 25px 20px;
+    }
+
+    .modal-close img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .rewards-item {
+        padding: 20px 20px;
+    }
+
+    .rewards-table-header {
+        padding: 22px 20px;
+    }
+
+    .rewards-table-header .header-item {
+        font-size: 20px;
+    }
+
+    .item-tier {
+        font-size: 16px;
+    }
+
+    .item-amount {
+        font-size: 16px;
+    }
+
+    .item-benefits {
+        font-size: 16px;
+    }
+
+    .rewards-item {
+        gap: 10px;
+    }
+
+    .rewards-table-header {
+        gap: 10px;
+    }
+
+    .rewards-modal {
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .rewards-header h2 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .rewards-header p {
+        font-size: 14px;
+        line-height: 18px;
+        opacity: 1;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+
+    .rewards-header {
+        padding: 70px 20px 20px 20px;
+    }
+
+    .rewards-container {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .rewards-table-scroll {
+        min-width: 500px;
+    }
+
+    .modal-close img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .rewards-table-header .header-item {
+        font-size: 18px;
+    }
+
+    .rewards-header {
+        padding: 60px 20px 20px 20px;
+    }
+
+    .rewards-header h2 {
+        font-size: 18px;
+    }
+
+    .rewards-container {
+        border-radius: 12px;
+    }
+
+    .rewards-table-header {
+        border-radius: 12px;
+    }
+
+    .rewards-table-header {
+        padding: 16px 20px;
+    }
+
+    .modal-content {
+        padding: 0px 20px 30px 20px;
+    }
+
+
+}
+
 /* ========================================
    TERMS OF USE MODAL
    ======================================== */
@@ -1727,6 +1849,67 @@ body {
 .disclaimer-bold {
     font-weight: 700 !important;
     color: #2D2D2D !important;
+}
+
+@media (max-width: 1024px) {
+    .terms-header {
+        padding: 40px 20px 30px 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .modal {
+        border-radius: 20px;
+    }
+
+    .terms-header h2 {
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 26px;
+    }
+
+    .terms-section h3 {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 8px;
+    }
+
+    .terms-section p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .terms-section {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .terms-section-list {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .terms-section-list-heading {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .terms-list li::before {
+        width: 15px;
+        top: 2px;
+        height: 16.68px;
+    }
+
+    .terms-list li {
+        padding-left: 20px;
+        margin-bottom: 4px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .terms-list {
+        margin: 10px 0px 0px 0px;
+    }
 }
 
 /* ========================================
@@ -1857,6 +2040,8 @@ body {
     line-height: 30px;
     font-weight: 700;
 }
+
+
 
 /* ========================================
    PRIVACY POLICY MODAL
@@ -2274,5 +2459,126 @@ body {
     .submit-btn-icon {
         width: 35px;
         height: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .personal-info-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .card-privay {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .card-privay h5 {
+        margin-bottom: 6px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .privacy-list {
+        margin: 8px 0;
+    }
+
+    .privacy-list li {
+        padding-left: 20px;
+        margin-bottom: 6px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .privacy-list li:before {
+        top: 3px;
+    }
+
+    .card-privay:last-child {
+        margin-top: 12px;
+    }
+
+    .your-info-heading {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .info-detail {
+        margin-top: 8px;
+    }
+
+    .info-detail-heading {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 4px;
+    }
+
+    .info-detail-para {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .cookie-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .cookie-grid>*:nth-last-child(1):nth-child(odd) {
+        grid-column: span 1;
+    }
+
+    .share-your-info-heading {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    .cookie-card {
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    .cookie-card h4 {
+        font-size: 16px;
+        margin-bottom: 4px;
+        line-height: 24px;
+    }
+
+    .cookie-card p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .third-party-heading {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+    }
+
+    .cookie-section-list {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .cookie-list {
+        margin: 10px 0 0 0;
+    }
+
+    .cookie-list li {
+        padding-left: 16px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .cookie-list li::before {
+        top: 3px;
+        width: 13px;
+        height: 13px;
+    }
+
+    .cookie-list li span {
+        font-size: 16px;
+        line-height: 16px;
     }
 }
