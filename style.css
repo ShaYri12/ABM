@@ -2129,19 +2129,18 @@ body {
 .info-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 15px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    /* gap: 8px; */
 }
 
 .form-group label {
@@ -2149,7 +2148,6 @@ body {
     font-size: 14px;
     font-weight: 600;
     color: #2D2D2D;
-    margin-bottom: 5px;
 }
 
 .required {
@@ -2165,7 +2163,7 @@ body {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    padding: 12px 0 8px 0;
+    padding: 8px 0 8px 0;
     font-size: 16px;
     color: #2D2D2D;
     transition: border-color 0.3s;
@@ -2186,16 +2184,16 @@ body {
 
 /* Increase vertical spacing between fields */
 .form-group {
-    margin-bottom: 28px;
+    margin-bottom: 15px;
 }
 
 /* Label styling */
 .form-group label {
-    font-size: 15px;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 6px;
-    letter-spacing: 0.01em;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #2D2D2D;
+    /* letter-spacing: 0.01em; */
 }
 
 /* Hide default arrow and add custom SVG arrow */
