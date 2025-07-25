@@ -2041,6 +2041,29 @@ body {
     font-weight: 700;
 }
 
+.contact-details {
+    margin: 8px 0px 10px 0px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.company {
+    font-size: 18px;
+    font-weight: 400;
+    /* color: #666666; */
+}
+
+.email {
+    margin-top: 8px;
+    /* color: #666666; */
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.resp-time{
+    font-size: 20px;
+    font-weight: 400;
+}
 
 
 /* ========================================
@@ -2185,6 +2208,12 @@ body {
     font-size: 14px;
     opacity: 0.8;
     margin-bottom: 0;
+}
+
+.last-update {
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .contact-content {
@@ -2590,12 +2619,13 @@ body {
     }
 
     .cookie-card h3 {
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 20px;
-}
-.cookie-card h3 a {
-    font-size: 14px;
-    line-height: 20px;
-}
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .cookie-card h3 a {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }

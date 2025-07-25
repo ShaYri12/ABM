@@ -36,11 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     faqCards.forEach(card => {
         card.addEventListener('click', function () {
-            // Close all other cards
             faqCards.forEach(c => {
                 if (c !== card) c.classList.remove('active');
             });
-            // Toggle this card
             card.classList.toggle('active');
         });
     });
@@ -271,7 +269,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = '';
     }
 
-    // Open Personal Info modal when Get Started or Apply Now buttons are clicked
     if (getStartedBtn) {
         getStartedBtn.addEventListener('click', openPersonalInfoModal);
     }
@@ -279,12 +276,10 @@ document.addEventListener('DOMContentLoaded', function () {
         applyNowBtn.addEventListener('click', openPersonalInfoModal);
     }
 
-    // Close Personal Info modal when close button is clicked
     if (closePersonalInfoModal) {
         closePersonalInfoModal.addEventListener('click', closePersonalInfoModalFunc);
     }
 
-    // Close Personal Info modal when clicking outside
     if (personalInfoModal) {
         personalInfoModal.addEventListener('click', function(e) {
             if (e.target === personalInfoModal) {
@@ -305,20 +300,15 @@ document.addEventListener('DOMContentLoaded', function () {
         personalInfoForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(personalInfoForm);
             const data = Object.fromEntries(formData);
             
-            // Here you would typically send the data to your server
             console.log('Form submitted:', data);
             
-            // Show success message (you can customize this)
             alert('Thank you! Your information has been submitted successfully.');
             
-            // Close the modal
             closePersonalInfoModalFunc();
             
-            // Reset the form
             personalInfoForm.reset();
         });
     }
