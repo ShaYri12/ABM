@@ -27,6 +27,11 @@ body {
     justify-content: center;
 }
 
+.logo-link{
+    text-decoration: none;
+    border: none;
+}
+
 /* Navbar */
 .navbar-container {
     position: sticky;
@@ -312,7 +317,7 @@ body {
     background: url('./assets/hero-bg.webp') no-repeat;
     width: 100%;
     background-size: cover;
-    margin-top: -88px;
+    margin-top: -95px;
     overflow: hidden;
 }
 
