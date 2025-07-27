@@ -29,6 +29,21 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileMenuClose.addEventListener('click', closeMenu);
     mobileMenuBackdrop.addEventListener('click', closeMenu);
 
+    // Close mobile menu when navigation links are clicked
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close mobile menu when mobile rewards button is clicked
+    const mobileRewardsBtn = document.querySelector('.mobile-rewards-btn');
+    if (mobileRewardsBtn) {
+        mobileRewardsBtn.addEventListener('click', function() {
+            closeMenu();
+            openModal();
+        });
+    }
+
     // FAQ accordion functionality
     const faqCards = document.querySelectorAll('.faq-container-card');
     if (faqCards.length > 0) {
@@ -45,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Modal functionality
     const rewardsBtn = document.querySelector('.rewards-btn');
-    const mobileRewardsBtn = document.querySelector('.mobile-rewards-btn');
     const modal = document.getElementById('rewardsModal');
     const closeModal = document.getElementById('closeModal');
 
@@ -62,9 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Open modal when rewards button is clicked
     if (rewardsBtn) {
         rewardsBtn.addEventListener('click', openModal);
-    }
-    if (mobileRewardsBtn) {
-        mobileRewardsBtn.addEventListener('click', openModal);
     }
 
     // Close modal when close button is clicked

@@ -1534,7 +1534,33 @@ body {
     margin: auto;
     background-color: #EFEFEF;
     border-radius: 20px;
-    overflow: hidden;
+    overflow-x: auto;
+}
+
+.rewards-table-scroll {
+    min-width: 500px;
+    /* Show scrollbar */
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
+}
+
+.rewards-table-scroll::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+}
+
+.rewards-table-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.rewards-table-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+    border-radius: 4px;
+}
+
+.rewards-table-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%);
 }
 
 .rewards-table-header {
