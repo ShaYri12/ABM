@@ -1435,6 +1435,15 @@ body {
     display: none;
 }
 
+.close-modal-sticky{
+    width: 100%;
+    background: white;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+
 @keyframes modalSlideIn {
     from {
         opacity: 0;
@@ -1468,9 +1477,13 @@ body {
 
 .modal-close {
     position: absolute;
-    top: 40px;
-    right: 50px;
+    top: 20px;
+    background: white !important;
+    right: 20px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     cursor: pointer;
     background: transparent;
@@ -1662,10 +1675,8 @@ body {
 
 @media (max-width: 1024px) {
     .modal-close {
-        top: 15px;
-        background: transparent;
-        border: none;
-        right: 15px;
+        top: 10px;
+        right: 10px;
     }
 
     .rewards-header h2 {
@@ -1677,6 +1688,8 @@ body {
     }
 
     .modal-close img {
+        background: white;
+        border-radius: 100%;
         width: 50px;
         height: 50px;
     }
@@ -2356,12 +2369,15 @@ body {
 
 .per-info-modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: -20px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    background: transparent;
+    background: white;
     transition: transform 0.2s ease;
 
 }
@@ -2372,7 +2388,9 @@ body {
 
 .per-info-modal-close .close-modal-icon {
     width: 40px;
+    background: white;
     height: 40px;
+    border-radius: 100%;
 }
 
 .personal-info-layout {
@@ -2551,12 +2569,15 @@ body {
     }
 
     .personal-info-modal {
-        padding: 30px 20px;
+        padding: 22px 10px;
         border-radius: 20px;
     }
 
+    .per-info-modal-close {
+    top: -10px;
+}
     .personal-info-form h1 {
-        font-size: 22px;
+        font-size: 20px;
         margin-bottom: 20px;
     }
 
