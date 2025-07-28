@@ -1564,6 +1564,64 @@ body {
     /* Show scrollbar */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
+    position: relative;
+    overflow-x: auto;
+}
+
+/* Custom scrollbar for all platforms */
+.rewards-table-scroll::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+}
+
+.rewards-table-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.rewards-table-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+    border-radius: 4px;
+}
+
+.rewards-table-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%);
+}
+
+/* Custom scrollbar for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .rewards-table-scroll {
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Add custom scrollbar track for iOS */
+    .rewards-table-scroll::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #f1f1f1;
+        border-radius: 4px;
+        z-index: 10;
+    }
+    
+    /* Add custom scrollbar thumb for iOS */
+    .rewards-table-scroll::before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        height: 8px;
+        width: 50%;
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+        border-radius: 4px;
+        z-index: 11;
+        pointer-events: none;
+    }
 }
 
 .rewards-table-scroll::-webkit-scrollbar {
