@@ -324,5 +324,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Close Personal Info modal when the new close button is clicked
+    const persInfoModalClose = document.getElementById('pers-info-modal');
+    if (persInfoModalClose) {
+        persInfoModalClose.addEventListener('click', closePersonalInfoModalFunc);
+    }
+
 
 });
