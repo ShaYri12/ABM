@@ -1565,24 +1565,47 @@ body {
 /* iOS specific scrollbar styling */
 @supports (-webkit-touch-callout: none) {
     .rewards-container {
-        overflow-x: scroll;
+        overflow-x: scroll !important;
         -webkit-overflow-scrolling: touch;
+        /* Force scrollbar to always show on iOS */
+        scrollbar-width: auto !important;
+        -ms-overflow-style: auto !important;
     }
     
     .rewards-container::-webkit-scrollbar {
         display: block !important;
-        height: 12px;
+        height: 12px !important;
+        width: 12px !important;
+        -webkit-appearance: none !important;
     }
     
     .rewards-container::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 6px;
+        background: #f1f1f1 !important;
+        border-radius: 6px !important;
+        -webkit-appearance: none !important;
     }
     
     .rewards-container::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
-        border-radius: 6px;
-        border: 1px solid #f1f1f1;
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%) !important;
+        border-radius: 6px !important;
+        border: 1px solid #f1f1f1 !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .rewards-container::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%) !important;
+    }
+}
+
+/* Additional iOS scrollbar fix */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .rewards-container {
+        overflow-x: scroll !important;
+    }
+    
+    .rewards-container::-webkit-scrollbar {
+        display: block !important;
+        height: 12px !important;
     }
 }
 
@@ -1591,6 +1614,27 @@ body {
     /* Show scrollbar */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
+    /* Add visual scroll indicator for iOS */
+    position: relative;
+}
+
+/* Add scroll indicator for iOS devices */
+@supports (-webkit-touch-callout: none) {
+    .rewards-table-scroll::after {
+        content: "← Scroll →";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 10;
+        white-space: nowrap;
+    }
 }
 
 .rewards-table-scroll::-webkit-scrollbar {
