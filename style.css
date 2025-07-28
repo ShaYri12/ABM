@@ -1561,11 +1561,12 @@ body {
 
 .rewards-table-scroll {
     min-width: 500px;
-    /* Show scrollbar */
+    /* Show horizontal scrollbar only */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
     position: relative;
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* Custom scrollbar for all platforms */
@@ -1588,19 +1589,21 @@ body {
     background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%);
 }
 
-/* Custom scrollbar for iOS Safari */
+/* Custom horizontal scrollbar for iOS Safari */
 @supports (-webkit-touch-callout: none) {
     .rewards-table-scroll {
         position: relative;
         overflow-x: auto;
+        overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px; /* Space for scrollbar */
     }
     
-    /* Add custom scrollbar track for iOS */
+    /* Add custom horizontal scrollbar track for iOS */
     .rewards-table-scroll::after {
         content: "";
         position: absolute;
-        bottom: -15px;
+        bottom: 0;
         left: 0;
         right: 0;
         height: 8px;
@@ -1609,14 +1612,14 @@ body {
         z-index: 10;
     }
     
-    /* Add custom scrollbar thumb for iOS */
+    /* Add custom horizontal scrollbar thumb for iOS */
     .rewards-table-scroll::before {
         content: "";
         position: absolute;
-        bottom: -15px;
+        bottom: 0;
         left: 0;
         height: 8px;
-        width: 50%;
+        width: 60px;
         background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
         border-radius: 4px;
         z-index: 11;
