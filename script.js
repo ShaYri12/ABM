@@ -337,10 +337,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
         
         if (isIOS) {
-            rewardsTableScroll.addEventListener('scroll', function() {
-                const scrollLeft = this.scrollLeft;
-                const scrollWidth = this.scrollWidth;
-                const clientWidth = this.clientWidth;
+            // Initialize scrollbar position
+            function updateScrollbar() {
+                const scrollLeft = rewardsTableScroll.scrollLeft;
+                const scrollWidth = rewardsTableScroll.scrollWidth;
+                const clientWidth = rewardsTableScroll.clientWidth;
                 
                 // Calculate scroll percentage
                 const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
@@ -350,8 +351,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const thumbPosition = scrollPercentage * trackWidth;
                 
                 // Update thumb position
-                this.style.setProperty('--scroll-thumb-left', thumbPosition + 'px');
-            });
+                rewardsTableScroll.style.setProperty('--scroll-thumb-left', thumbPosition + 'px');
+            }
+            
+            // Update on scroll
+            rewardsTableScroll.addEventListener('scroll', updateScrollbar);
+            
+            // Initial position
+            updateScrollbar();
         }
     }
 
