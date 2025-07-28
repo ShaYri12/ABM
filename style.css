@@ -1598,7 +1598,7 @@ body {
 }
 
 /* Force scrollbar on all WebKit browsers including iOS */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) { */
     .rewards-container {
         overflow-x: scroll !important;
         -webkit-overflow-scrolling: touch;
@@ -1620,7 +1620,7 @@ body {
         border-radius: 6px !important;
         border: 1px solid #f1f1f1 !important;
     }
-}
+/* } */
 
 .rewards-table-scroll {
     min-width: 500px;
