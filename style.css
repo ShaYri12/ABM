@@ -27,7 +27,7 @@ body {
     justify-content: center;
 }
 
-.logo-link{
+.logo-link {
     text-decoration: none;
     border: none;
 }
@@ -1685,7 +1685,7 @@ body {
 
 @media (max-width: 700px) {
     .rewards-item {
-        padding: 16px 20px;
+        padding: 16px 12px;
     }
 
     .rewards-table-header {
@@ -1697,23 +1697,26 @@ body {
     }
 
     .item-tier {
-        font-size: 16px;
+        line-height: 14px;
+        font-size: 12px;
     }
 
     .item-amount {
-        font-size: 16px;
+        line-height: 14px;
+        font-size: 12px;
     }
 
     .item-benefits {
-        font-size: 16px;
+        line-height: 14px;
+        font-size: 12px;
     }
 
     .rewards-item {
-        gap: 10px;
+        gap: 14px;
     }
 
     .rewards-table-header {
-        gap: 10px;
+        gap: 14px;
     }
 
     .rewards-modal {
@@ -1754,7 +1757,7 @@ body {
     }
 
     .rewards-table-header .header-item {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .rewards-header {
@@ -1774,11 +1777,11 @@ body {
     }
 
     .rewards-table-header {
-        padding: 16px 20px;
+        padding: 12px 14px;
     }
 
     .modal-content {
-        padding: 0px 20px 30px 20px;
+        padding: 0px 14px 20px 14px;
     }
 
 
@@ -2113,7 +2116,7 @@ body {
     font-weight: 400;
 }
 
-.resp-time{
+.resp-time {
     font-size: 20px;
     font-weight: 400;
 }
@@ -2352,7 +2355,7 @@ body {
 }
 
 
-.per-info-modal-close{
+.per-info-modal-close {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -2363,11 +2366,12 @@ body {
     transition: transform 0.2s ease;
 
 }
+
 .per-info-modal-close:hover {
     transform: scale(1.1);
 }
 
-.per-info-modal-close .close-modal-icon{
+.per-info-modal-close .close-modal-icon {
     width: 40px;
     height: 40px;
 }
