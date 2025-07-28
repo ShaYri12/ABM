@@ -818,7 +818,6 @@ body {
     border-radius: 25px;
     padding: 1px;
     background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
-    cursor: pointer;
 }
 
 .faq-container-card>div {

@@ -44,19 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // FAQ accordion functionality
-    const faqCards = document.querySelectorAll('.faq-container-card');
-    if (faqCards.length > 0) {
-        faqCards[0].classList.add('active');
-    }
-    faqCards.forEach(card => {
-        card.addEventListener('click', function () {
-            faqCards.forEach(c => {
-                if (c !== card) c.classList.remove('active');
-            });
-            card.classList.toggle('active');
-        });
-    });
+
 
     // Modal functionality
     const rewardsBtn = document.querySelector('.rewards-btn');
