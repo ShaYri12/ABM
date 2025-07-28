@@ -330,5 +330,29 @@ document.addEventListener('DOMContentLoaded', function () {
         persInfoModalClose.addEventListener('click', closePersonalInfoModalFunc);
     }
 
+    // iOS Custom Scrollbar functionality
+    const rewardsTableScroll = document.querySelector('.rewards-table-scroll');
+    if (rewardsTableScroll) {
+        // Check if it's iOS
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        
+        if (isIOS) {
+            rewardsTableScroll.addEventListener('scroll', function() {
+                const scrollLeft = this.scrollLeft;
+                const scrollWidth = this.scrollWidth;
+                const clientWidth = this.clientWidth;
+                
+                // Calculate scroll percentage
+                const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
+                
+                // Calculate available space for thumb movement
+                const trackWidth = clientWidth - 80; // 80px is thumb width
+                const thumbPosition = scrollPercentage * trackWidth;
+                
+                // Update thumb position
+                this.style.setProperty('--scroll-thumb-left', thumbPosition + 'px');
+            });
+        }
+    }
 
 });

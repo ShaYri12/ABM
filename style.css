@@ -1596,43 +1596,35 @@ body {
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        /* Hide default iOS scrollbar */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        padding-bottom: 15px; /* Space for scrollbar */
     }
     
-    .rewards-table-scroll::-webkit-scrollbar {
-        display: none;
-    }
-    
-    /* Add visual scroll indicator for iOS */
+    /* Custom scrollbar track for iOS */
     .rewards-table-scroll::after {
         content: "";
         position: absolute;
-        top: 0;
+        bottom: 0;
+        left: 0;
         right: 0;
-        height: 100%;
-        width: 20px;
-        background: linear-gradient(to left, rgba(239, 239, 239, 1) 0%, transparent 100%);
-        pointer-events: none;
-        z-index: 5;
+        height: 6px;
+        background: #f1f1f1;
+        border-radius: 3px;
+        z-index: 10;
     }
     
-    /* Add scroll arrow indicator */
+    /* Custom scrollbar thumb for iOS */
     .rewards-table-scroll::before {
-        content: "→";
+        content: "";
         position: absolute;
-        top: 50%;
-        right: 5px;
-        transform: translateY(-50%);
-        color: #D9305B;
-        font-size: 16px;
-        font-weight: bold;
-        background: rgba(239, 239, 239, 0.9);
-        padding: 4px 6px;
-        border-radius: 50%;
-        z-index: 6;
+        bottom: 0;
+        left: var(--scroll-thumb-left, 0);
+        height: 6px;
+        width: 80px;
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+        border-radius: 3px;
+        z-index: 11;
         pointer-events: none;
+        transition: left 0.1s ease;
     }
 }
 
