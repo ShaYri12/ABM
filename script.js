@@ -330,37 +330,5 @@ document.addEventListener('DOMContentLoaded', function () {
         persInfoModalClose.addEventListener('click', closePersonalInfoModalFunc);
     }
 
-    // iOS Custom Scrollbar functionality - Simple approach
-    const rewardsTableScroll = document.querySelector('.rewards-table-scroll');
-    if (rewardsTableScroll) {
-        // Check if it's iOS
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        
-        if (isIOS) {
-            console.log('iOS device detected - custom scrollbar enabled');
-            
-            // Add scroll event listener
-            rewardsTableScroll.addEventListener('scroll', function() {
-                console.log('Scrolling detected');
-                const scrollLeft = this.scrollLeft;
-                const scrollWidth = this.scrollWidth;
-                const clientWidth = this.clientWidth;
-                
-                console.log('Scroll values:', { scrollLeft, scrollWidth, clientWidth });
-                
-                // Calculate scroll percentage
-                const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
-                console.log('Scroll percentage:', scrollPercentage);
-                
-                // Calculate thumb position
-                const trackWidth = clientWidth - 80;
-                const thumbPosition = scrollPercentage * trackWidth;
-                console.log('Thumb position:', thumbPosition);
-                
-                // Update CSS custom property
-                this.style.setProperty('--scroll-thumb-left', thumbPosition + 'px');
-            });
-        }
-    }
 
 });
