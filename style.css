@@ -1573,6 +1573,15 @@ body {
     .rewards-container {
         position: relative;
         padding-bottom: 20px; /* Space for scrollbar */
+        /* Hide default Safari scrollbar */
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .rewards-container::-webkit-scrollbar {
+        display: none;
     }
     
     /* Create a fake scrollbar track */
@@ -1588,18 +1597,20 @@ body {
         z-index: 10;
     }
     
-    /* Create a fake scrollbar thumb */
+    /* Create a fake scrollbar thumb that moves with scroll */
     .rewards-container::before {
         content: "";
         position: absolute;
         bottom: 0;
-        left: 0;
         height: 8px;
-        width: 200px; /* Adjust based on content width */
+        width: 60px; /* Fixed width for thumb */
         background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
         border-radius: 4px;
         z-index: 11;
         pointer-events: none;
+        /* Position based on scroll */
+        left: var(--scroll-thumb-left, 0);
+        transition: left 0.1s ease;
     }
 }
 

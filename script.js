@@ -323,4 +323,24 @@ document.addEventListener('DOMContentLoaded', function () {
             personalInfoForm.reset();
         });
     }
+
+    // Custom iOS scrollbar functionality
+    const rewardsContainer = document.querySelector('.rewards-container');
+    if (rewardsContainer) {
+        rewardsContainer.addEventListener('scroll', function() {
+            const scrollLeft = this.scrollLeft;
+            const scrollWidth = this.scrollWidth;
+            const clientWidth = this.clientWidth;
+            const maxScroll = scrollWidth - clientWidth;
+            
+            if (maxScroll > 0) {
+                const scrollPercentage = scrollLeft / maxScroll;
+                const trackWidth = clientWidth - 60; // 60px is thumb width
+                const thumbPosition = scrollPercentage * trackWidth;
+                
+                // Update the custom scrollbar thumb position
+                this.style.setProperty('--scroll-thumb-left', thumbPosition + 'px');
+            }
+        });
+    }
 });
