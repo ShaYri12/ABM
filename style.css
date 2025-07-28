@@ -1564,6 +1564,45 @@ body {
     /* Show scrollbar */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
+    /* Custom scrollbar for iOS */
+    position: relative;
+}
+
+/* Custom scrollbar for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .rewards-table-scroll::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 8px;
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+        border-radius: 4px;
+        pointer-events: none;
+        z-index: 10;
+        opacity: 0.8;
+    }
+    
+    /* Add scroll indicator dots */
+    .rewards-table-scroll::before {
+        content: "●●●";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #D9305B;
+        font-size: 12px;
+        letter-spacing: 2px;
+        pointer-events: none;
+        z-index: 10;
+        animation: scrollDots 2s ease-in-out infinite;
+    }
+}
+
+@keyframes scrollDots {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
 }
 
 .rewards-table-scroll::-webkit-scrollbar {
