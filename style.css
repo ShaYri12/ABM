@@ -1602,72 +1602,43 @@ body {
     .rewards-container {
         overflow-x: scroll !important;
         -webkit-overflow-scrolling: touch;
-        /* Force iOS to show scrollbar */
-        -webkit-appearance: none;
     }
     
     .rewards-container::-webkit-scrollbar {
         display: block !important;
         height: 12px !important;
         width: 12px !important;
-        -webkit-appearance: none !important;
     }
     
     .rewards-container::-webkit-scrollbar-track {
         background: #f1f1f1 !important;
         border-radius: 6px !important;
-        -webkit-appearance: none !important;
     }
     
     .rewards-container::-webkit-scrollbar-thumb {
         background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%) !important;
         border-radius: 6px !important;
         border: 1px solid #f1f1f1 !important;
-        -webkit-appearance: none !important;
     }
 }
 
-/* iOS Safari scroll indicator */
+/* iOS Safari scroll hint */
 @supports (-webkit-touch-callout: none) {
     .rewards-container {
         position: relative;
-        overflow-x: scroll !important;
-        -webkit-overflow-scrolling: touch;
     }
     
-    /* Add scroll indicator for iOS */
     .rewards-container::after {
         content: "";
         position: absolute;
         top: 0;
         right: 0;
         height: 100%;
-        width: 30px;
-        background: linear-gradient(to left, rgba(239, 239, 239, 1) 0%, rgba(239, 239, 239, 0.8) 50%, transparent 100%);
+        width: 20px;
+        background: linear-gradient(to left, #EFEFEF 0%, transparent 100%);
         pointer-events: none;
         z-index: 5;
-        border-radius: 0 20px 20px 0;
     }
-    
-    /* Show scroll arrows on iOS */
-    .rewards-container::before {
-        content: "→";
-        position: absolute;
-        top: 50%;
-        right: 8px;
-        transform: translateY(-50%);
-        color: #D9305B;
-        font-size: 16px;
-        font-weight: bold;
-        pointer-events: none;
-        z-index: 6;
-        animation: scrollHint 2s ease-in-out infinite;
-    }
-}
-
-@keyframes scrollHint {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
 }
 
 .rewards-table-scroll {
