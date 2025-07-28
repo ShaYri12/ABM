@@ -1568,48 +1568,49 @@ body {
     position: relative;
 }
 
-/* Custom scrollbar for iOS Safari */
+/* iOS Safari scroll indicator */
 @supports (-webkit-touch-callout: none) {
     .rewards-container {
         position: relative;
-        padding-bottom: 20px; /* Space for scrollbar */
-        /* Hide default Safari scrollbar */
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
     }
     
-    .rewards-container::-webkit-scrollbar {
-        display: none;
-    }
-    
-    /* Create a fake scrollbar track */
+    /* Add scroll indicator on the right edge */
     .rewards-container::after {
-        content: "";
+        content: "→";
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 8px;
-        background: #f1f1f1;
-        border-radius: 4px;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #D9305B;
+        font-size: 20px;
+        font-weight: bold;
+        background: rgba(239, 239, 239, 0.9);
+        padding: 8px;
+        border-radius: 50%;
         z-index: 10;
+        pointer-events: none;
+        animation: scrollHint 2s ease-in-out infinite;
     }
     
-    /* Create a static scrollbar thumb indicator */
+    /* Add gradient fade on right edge */
     .rewards-container::before {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 8px;
-        width: 40%;
-        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
-        border-radius: 4px;
-        z-index: 11;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 30px;
+        background: linear-gradient(to left, rgba(239, 239, 239, 1) 0%, transparent 100%);
         pointer-events: none;
+        z-index: 5;
     }
+}
+
+@keyframes scrollHint {
+    0%, 100% { opacity: 0.7; transform: translateY(-50%) translateX(0); }
+    50% { opacity: 1; transform: translateY(-50%) translateX(3px); }
 }
 
 .rewards-table-scroll::-webkit-scrollbar {
