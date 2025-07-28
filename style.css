@@ -1564,53 +1564,6 @@ body {
     /* Show scrollbar */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
-    /* Custom scrollbar for iOS */
-    position: relative;
-}
-
-/* iOS Safari scroll indicator */
-@supports (-webkit-touch-callout: none) {
-    .rewards-container {
-        position: relative;
-        overflow-x: scroll;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    /* Add scroll indicator on the right edge */
-    .rewards-container::after {
-        content: "→";
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        color: #D9305B;
-        font-size: 20px;
-        font-weight: bold;
-        background: rgba(239, 239, 239, 0.9);
-        padding: 8px;
-        border-radius: 50%;
-        z-index: 10;
-        pointer-events: none;
-        animation: scrollHint 2s ease-in-out infinite;
-    }
-    
-    /* Add gradient fade on right edge */
-    .rewards-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 30px;
-        background: linear-gradient(to left, rgba(239, 239, 239, 1) 0%, transparent 100%);
-        pointer-events: none;
-        z-index: 5;
-    }
-}
-
-@keyframes scrollHint {
-    0%, 100% { opacity: 0.7; transform: translateY(-50%) translateX(0); }
-    50% { opacity: 1; transform: translateY(-50%) translateX(3px); }
 }
 
 .rewards-table-scroll::-webkit-scrollbar {
