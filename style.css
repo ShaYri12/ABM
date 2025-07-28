@@ -1535,14 +1535,16 @@ body {
     background-color: #EFEFEF;
     border-radius: 20px;
     overflow-x: auto;
-    /* Show scrollbar */
+    /* Show scrollbar on all devices including iOS */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .rewards-container::-webkit-scrollbar {
-    display: block;
+    display: block !important;
     height: 8px;
+    -webkit-appearance: none;
 }
 
 .rewards-container::-webkit-scrollbar-track {
@@ -1553,10 +1555,35 @@ body {
 .rewards-container::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
     border-radius: 4px;
+    -webkit-appearance: none;
 }
 
 .rewards-container::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%);
+}
+
+/* iOS specific scrollbar styling */
+@supports (-webkit-touch-callout: none) {
+    .rewards-container {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .rewards-container::-webkit-scrollbar {
+        display: block !important;
+        height: 12px;
+    }
+    
+    .rewards-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 6px;
+    }
+    
+    .rewards-container::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+        border-radius: 6px;
+        border: 1px solid #f1f1f1;
+    }
 }
 
 .rewards-table-scroll {
