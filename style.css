@@ -1597,20 +1597,18 @@ body {
         z-index: 10;
     }
     
-    /* Create a fake scrollbar thumb that moves with scroll */
+    /* Create a static scrollbar thumb indicator */
     .rewards-container::before {
         content: "";
         position: absolute;
         bottom: 0;
+        left: 0;
         height: 8px;
-        width: 60px; /* Fixed width for thumb */
+        width: 40%;
         background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
         border-radius: 4px;
         z-index: 11;
         pointer-events: none;
-        /* Position based on scroll */
-        left: var(--scroll-thumb-left, 0);
-        transition: left 0.1s ease;
     }
 }
 
