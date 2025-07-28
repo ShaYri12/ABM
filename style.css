@@ -1589,40 +1589,49 @@ body {
     background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%);
 }
 
-/* Custom horizontal scrollbar for iOS Safari */
+/* iOS Safari scrollbar fix */
 @supports (-webkit-touch-callout: none) {
     .rewards-table-scroll {
         position: relative;
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 20px; /* Space for scrollbar */
+        /* Hide default iOS scrollbar */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
     
-    /* Add custom horizontal scrollbar track for iOS */
+    .rewards-table-scroll::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Add visual scroll indicator for iOS */
     .rewards-table-scroll::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 0;
+        top: 0;
         right: 0;
-        height: 8px;
-        background: #f1f1f1;
-        border-radius: 4px;
-        z-index: 10;
+        height: 100%;
+        width: 20px;
+        background: linear-gradient(to left, rgba(239, 239, 239, 1) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 5;
     }
     
-    /* Add custom horizontal scrollbar thumb for iOS */
+    /* Add scroll arrow indicator */
     .rewards-table-scroll::before {
-        content: "";
+        content: "→";
         position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 8px;
-        width: 60px;
-        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
-        border-radius: 4px;
-        z-index: 11;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        color: #D9305B;
+        font-size: 16px;
+        font-weight: bold;
+        background: rgba(239, 239, 239, 0.9);
+        padding: 4px 6px;
+        border-radius: 50%;
+        z-index: 6;
         pointer-events: none;
     }
 }
