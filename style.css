@@ -1535,16 +1535,14 @@ body {
     background-color: #EFEFEF;
     border-radius: 20px;
     overflow-x: auto;
-    /* Show scrollbar on all devices including iOS */
+    /* Show scrollbar */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 .rewards-container::-webkit-scrollbar {
-    display: block !important;
+    display: block;
     height: 8px;
-    -webkit-appearance: none;
 }
 
 .rewards-container::-webkit-scrollbar-track {
@@ -1555,90 +1553,10 @@ body {
 .rewards-container::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
     border-radius: 4px;
-    -webkit-appearance: none;
 }
 
 .rewards-container::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%);
-}
-
-/* iOS specific scrollbar styling */
-@supports (-webkit-touch-callout: none) {
-    .rewards-container {
-        overflow-x: scroll !important;
-        -webkit-overflow-scrolling: touch;
-        /* Force scrollbar to always show on iOS */
-        scrollbar-width: auto !important;
-        -ms-overflow-style: auto !important;
-    }
-    
-    .rewards-container::-webkit-scrollbar {
-        display: block !important;
-        height: 12px !important;
-        width: 12px !important;
-        -webkit-appearance: none !important;
-    }
-    
-    .rewards-container::-webkit-scrollbar-track {
-        background: #f1f1f1 !important;
-        border-radius: 6px !important;
-        -webkit-appearance: none !important;
-    }
-    
-    .rewards-container::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%) !important;
-        border-radius: 6px !important;
-        border: 1px solid #f1f1f1 !important;
-        -webkit-appearance: none !important;
-    }
-    
-    .rewards-container::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%) !important;
-    }
-}
-
-/* Force scrollbar on all WebKit browsers including iOS */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    .rewards-container {
-        overflow-x: scroll !important;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .rewards-container::-webkit-scrollbar {
-        display: block !important;
-        height: 12px !important;
-        width: 12px !important;
-    }
-    
-    .rewards-container::-webkit-scrollbar-track {
-        background: #f1f1f1 !important;
-        border-radius: 6px !important;
-    }
-    
-    .rewards-container::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%) !important;
-        border-radius: 6px !important;
-        border: 1px solid #f1f1f1 !important;
-    }
-}
-
-/* iOS Safari scroll hint */
-@supports (-webkit-touch-callout: none) {
-    .rewards-container {
-        position: relative;
-    }
-    
-    .rewards-container::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 20px;
-        background: linear-gradient(to left, #EFEFEF 0%, transparent 100%);
-        pointer-events: none;
-        z-index: 5;
-    }
 }
 
 .rewards-table-scroll {
@@ -1646,11 +1564,7 @@ body {
     /* Show scrollbar */
     scrollbar-width: auto;
     -ms-overflow-style: auto;
-    /* Add visual scroll indicator for iOS */
-    position: relative;
 }
-
-
 
 .rewards-table-scroll::-webkit-scrollbar {
     display: block;
