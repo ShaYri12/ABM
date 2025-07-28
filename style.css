@@ -1570,39 +1570,37 @@ body {
 
 /* Custom scrollbar for iOS Safari */
 @supports (-webkit-touch-callout: none) {
-    .rewards-table-scroll::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 8px;
-        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
-        border-radius: 4px;
-        pointer-events: none;
-        z-index: 10;
-        opacity: 0.8;
+    .rewards-container {
+        position: relative;
+        padding-bottom: 20px; /* Space for scrollbar */
     }
     
-    /* Add scroll indicator dots */
-    .rewards-table-scroll::before {
-        content: "●●●";
+    /* Create a fake scrollbar track */
+    .rewards-container::after {
+        content: "";
         position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #D9305B;
-        font-size: 12px;
-        letter-spacing: 2px;
-        pointer-events: none;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #f1f1f1;
+        border-radius: 4px;
         z-index: 10;
-        animation: scrollDots 2s ease-in-out infinite;
     }
-}
-
-@keyframes scrollDots {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
+    
+    /* Create a fake scrollbar thumb */
+    .rewards-container::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 8px;
+        width: 200px; /* Adjust based on content width */
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+        border-radius: 4px;
+        z-index: 11;
+        pointer-events: none;
+    }
 }
 
 .rewards-table-scroll::-webkit-scrollbar {
