@@ -1535,6 +1535,28 @@ body {
     background-color: #EFEFEF;
     border-radius: 20px;
     overflow-x: auto;
+    /* Show scrollbar */
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
+}
+
+.rewards-container::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+}
+
+.rewards-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.rewards-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
+    border-radius: 4px;
+}
+
+.rewards-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #b8254a 0%, #6a1f6f 100%);
 }
 
 .rewards-table-scroll {
@@ -1663,7 +1685,7 @@ body {
 
 @media (max-width: 700px) {
     .rewards-item {
-        padding: 20px 20px;
+        padding: 16px 20px;
     }
 
     .rewards-table-header {
