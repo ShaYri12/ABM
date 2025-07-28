@@ -1597,15 +1597,28 @@ body {
     }
 }
 
-/* Additional iOS scrollbar fix */
+/* Force scrollbar on all WebKit browsers including iOS */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     .rewards-container {
         overflow-x: scroll !important;
+        -webkit-overflow-scrolling: touch;
     }
     
     .rewards-container::-webkit-scrollbar {
         display: block !important;
         height: 12px !important;
+        width: 12px !important;
+    }
+    
+    .rewards-container::-webkit-scrollbar-track {
+        background: #f1f1f1 !important;
+        border-radius: 6px !important;
+    }
+    
+    .rewards-container::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%) !important;
+        border-radius: 6px !important;
+        border: 1px solid #f1f1f1 !important;
     }
 }
 
@@ -1618,24 +1631,7 @@ body {
     position: relative;
 }
 
-/* Add scroll indicator for iOS devices */
-@supports (-webkit-touch-callout: none) {
-    .rewards-table-scroll::after {
-        content: "← Scroll →";
-        position: absolute;
-        bottom: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(180deg, #D9305B 0%, #7E2784 100%);
-        color: white;
-        padding: 5px 15px;
-        border-radius: 15px;
-        font-size: 12px;
-        font-weight: 600;
-        z-index: 10;
-        white-space: nowrap;
-    }
-}
+
 
 .rewards-table-scroll::-webkit-scrollbar {
     display: block;
