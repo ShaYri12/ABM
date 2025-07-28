@@ -330,35 +330,36 @@ document.addEventListener('DOMContentLoaded', function () {
         persInfoModalClose.addEventListener('click', closePersonalInfoModalFunc);
     }
 
-    // iOS Custom Scrollbar functionality
+    // iOS Custom Scrollbar functionality - Simple approach
     const rewardsTableScroll = document.querySelector('.rewards-table-scroll');
     if (rewardsTableScroll) {
         // Check if it's iOS
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
         
         if (isIOS) {
-            // Initialize scrollbar position
-            function updateScrollbar() {
-                const scrollLeft = rewardsTableScroll.scrollLeft;
-                const scrollWidth = rewardsTableScroll.scrollWidth;
-                const clientWidth = rewardsTableScroll.clientWidth;
+            console.log('iOS device detected - custom scrollbar enabled');
+            
+            // Add scroll event listener
+            rewardsTableScroll.addEventListener('scroll', function() {
+                console.log('Scrolling detected');
+                const scrollLeft = this.scrollLeft;
+                const scrollWidth = this.scrollWidth;
+                const clientWidth = this.clientWidth;
+                
+                console.log('Scroll values:', { scrollLeft, scrollWidth, clientWidth });
                 
                 // Calculate scroll percentage
                 const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
+                console.log('Scroll percentage:', scrollPercentage);
                 
-                // Calculate available space for thumb movement
-                const trackWidth = clientWidth - 80; // 80px is thumb width
+                // Calculate thumb position
+                const trackWidth = clientWidth - 80;
                 const thumbPosition = scrollPercentage * trackWidth;
+                console.log('Thumb position:', thumbPosition);
                 
-                // Update thumb position
-                rewardsTableScroll.style.setProperty('--scroll-thumb-left', thumbPosition + 'px');
-            }
-            
-            // Update on scroll
-            rewardsTableScroll.addEventListener('scroll', updateScrollbar);
-            
-            // Initial position
-            updateScrollbar();
+                // Update CSS custom property
+                this.style.setProperty('--scroll-thumb-left', thumbPosition + 'px');
+            });
         }
     }
 
