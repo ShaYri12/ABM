@@ -252,6 +252,12 @@ body {
     display: none;
 }
 
+.reward-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 @media (max-width: 1150px) {
     .navbar {
         border-radius: 20px;
@@ -262,16 +268,11 @@ body {
         margin-right: 8px;
     }
 
-    .navbar-links,
-    .rewards-btn {
+    .navbar-links {
         display: none;
     }
 
     .navbar-hamburger {
-        display: flex;
-    }
-
-    .mobile-rewards-btn {
         display: flex;
     }
 }
@@ -307,6 +308,10 @@ body {
 
     .navbar-hamburger {
         width: 2;
+    }
+
+    .navbar-container {
+        top: 20px;
     }
 }
 
@@ -500,7 +505,7 @@ body {
 
 @media (max-width: 850px) {
     .hero-container {
-        padding-top: 175px;
+        padding-top: 155px;
     }
 
     .hero-content {
@@ -551,12 +556,13 @@ body {
     .hero-btn {
         font-size: 16px;
         line-height: 24px;
-        padding: 8px 8px 8px 16px;
+        padding: 6px 8px 6px 16px;
     }
 
     .hero-btn-icon {
         width: 36px;
         height: 36px;
+        margin-left: 10px;
     }
 
     .hero-img-1 {
@@ -585,7 +591,7 @@ body {
     }
 
     .hero-text {
-        gap: 24px;
+        gap: 18px;
     }
 
     .hero-text h1 {
@@ -1435,7 +1441,7 @@ body {
     display: none;
 }
 
-.close-modal-sticky{
+.close-modal-sticky {
     width: 100%;
     background: white;
     z-index: 2;
@@ -2574,8 +2580,9 @@ body {
     }
 
     .per-info-modal-close {
-    top: -10px;
-}
+        top: -10px;
+    }
+
     .personal-info-form h1 {
         font-size: 20px;
         margin-bottom: 20px;
@@ -2727,5 +2734,37 @@ body {
     .cookie-card h3 a {
         font-size: 14px;
         line-height: 20px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .rewards-btn-icon {
+        width: 36px;
+        height: 36px;
+        margin-left: 10px;
+    }
+
+    .rewards-btn {
+        font-size: 16px;
+        padding: 6px 8px 6px 16px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .rewards-btn-icon {
+        width: 36px;
+        height: 36px;
+        margin-left: 10px;
+    }
+
+    .rewards-btn {
+        display: none;
+    }
+
+    .mobile-rewards-btn {
+        display: flex;
+        width: fit-content;
     }
 }
