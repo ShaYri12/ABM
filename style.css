@@ -352,9 +352,7 @@ body {
     content: "";
     position: absolute;
     top: -120px;
-    /* go above */
     left: -60px;
-    /* go left outside */
     width: 120%;
     height: 130%;
     background-image:
@@ -1088,7 +1086,6 @@ body {
     inset: 0;
     border-radius: 50%;
     border: 4.38px solid rgba(255, 255, 255, 0.6);
-    /* semi-transparent border */
     z-index: 1;
 }
 
@@ -1104,7 +1101,6 @@ body {
     letter-spacing: 0%;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .steps-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1388,7 +1384,6 @@ body {
     line-height: 23px;
 }
 
-/* Footer Responsiness */
 @media screen and (max-width: 640px) {
     .footer-container .footer-links-container {
         gap: 16px;
@@ -2124,12 +2119,10 @@ body {
 .company {
     font-size: 18px;
     font-weight: 400;
-    /* color: #666666; */
 }
 
 .email {
     margin-top: 8px;
-    /* color: #666666; */
     font-size: 18px;
     font-weight: 400;
 }
@@ -2221,7 +2214,6 @@ body {
 }
 
 .your-info-heading {
-    /* margin-top: 15px; */
     font-size: 18px;
     line-height: 30px;
     color: #2D2D2D;
